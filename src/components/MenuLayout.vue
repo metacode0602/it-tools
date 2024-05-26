@@ -41,7 +41,13 @@ const siderPosition = computed(() => (isSmallScreen.value ? 'absolute' : 'static
 .content {
   // background-color: #f1f5f9;
   ::v-deep(.n-layout-scroll-container) {
-    padding: 26px;
+    padding: 0px;
+    overflow-y: scroll; /* 允许滚动 */
+    scrollbar-width: none; /* Chrome, Edge, Safari */
+    -ms-overflow-style: none; /* IE 10+ */
+    &::-webkit-scrollbar {
+      display: none; /* 隐藏滚动条 */
+    }
   }
 }
 

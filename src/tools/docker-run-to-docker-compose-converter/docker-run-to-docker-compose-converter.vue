@@ -32,12 +32,12 @@ const { download } = useDownloadFileFromBase64({ source: dockerComposeBase64, fi
   <div>
     <c-input-text
       v-model:value="dockerRun"
-      label="Your docker run command:"
+      label="docker run 命令："
       style="font-family: monospace"
       multiline
       raw-text
       monospace
-      placeholder="Your docker run command to convert..."
+      placeholder="用于转换的 docker run 运行命令..."
       rows="3"
     />
 
@@ -47,12 +47,12 @@ const { download } = useDownloadFileFromBase64({ source: dockerComposeBase64, fi
 
     <div mt-5 flex justify-center>
       <c-button :disabled="dockerCompose === ''" secondary @click="download">
-        Download docker-compose.yml
+        下载 docker-compose.yml
       </c-button>
     </div>
 
     <div v-if="notComposable.length > 0">
-      <n-alert title="This options are not translatable to docker-compose" type="info" mt-5>
+      <n-alert title="这些选项无法转换成docker-compose。" type="info" mt-5>
         <ul>
           <li v-for="(message, index) of notComposable" :key="index">
             {{ message }}
@@ -63,7 +63,7 @@ const { download } = useDownloadFileFromBase64({ source: dockerComposeBase64, fi
 
     <div v-if="notImplemented.length > 0">
       <n-alert
-        title="This options are not yet implemented and therefore haven't been translated to docker-compose"
+        title="这些选项尚未实现，无法转换成docker-compose。"
         type="warning"
         mt-5
       >
@@ -76,7 +76,7 @@ const { download } = useDownloadFileFromBase64({ source: dockerComposeBase64, fi
     </div>
 
     <div v-if="errors.length > 0">
-      <n-alert title="The following errors occured" type="error" mt-5>
+      <n-alert title="出错了..." type="error" mt-5>
         <ul>
           <li v-for="(message, index) of errors" :key="index">
             {{ message }}

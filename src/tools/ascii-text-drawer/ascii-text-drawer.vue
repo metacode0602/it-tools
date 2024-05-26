@@ -44,7 +44,7 @@ const fonts = ['1Row', '3-D', '3D Diagonal', '3D-ASCII', '3x5', '4Max', '5 Line 
   <c-card style="max-width: 600px;">
     <c-input-text
       v-model:value="input"
-      label="Your text:"
+      :label="$t('404.notFound')"
       placeholder="Your text to draw"
       raw-text
       multiline
@@ -60,7 +60,7 @@ const fonts = ['1Row', '3-D', '3D Diagonal', '3D-ASCII', '3x5', '4Max', '5 Line 
           label-position="top"
           label="Font:"
           :options="fonts"
-          searchable="true"
+          :searchable="true"
           placeholder="Select font to use"
         />
       </n-gi>

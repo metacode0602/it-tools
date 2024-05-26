@@ -1,55 +1,56 @@
 <script setup lang="ts">
 import { useWindowSize } from '@vueuse/core';
+import { translate } from '@/plugins/i18n.plugin';
 
 const { width, height } = useWindowSize();
 
 const sections = [
   {
-    name: 'Screen',
+    name: translate('tools.device-information.screen'),
     information: [
       {
-        label: 'Screen size',
+        label: translate('tools.device-information.screen-size'),
         value: computed(() => `${window.screen.availWidth} x ${window.screen.availHeight}`),
       },
       {
-        label: 'Orientation',
+        label: translate('tools.device-information.orientation'),
         value: computed(() => window.screen.orientation.type),
       },
       {
-        label: 'Orientation angle',
+        label: translate('tools.device-information.orientation-angle'),
         value: computed(() => `${window.screen.orientation.angle}°`),
       },
       {
-        label: 'Color depth',
+        label: translate('tools.device-information.color-depth'),
         value: computed(() => `${window.screen.colorDepth} bits`),
       },
       {
-        label: 'Pixel ratio',
+        label: translate('tools.device-information.pixel-ratio'),
         value: computed(() => `${window.devicePixelRatio} dppx`),
       },
       {
-        label: 'Window size',
+        label: translate('tools.device-information.window-size'),
         value: computed(() => `${width.value} x ${height.value}`),
       },
     ],
   },
   {
-    name: 'Device',
+    name: translate('tools.device-information.device'),
     information: [
       {
-        label: 'Browser vendor',
+        label: translate('tools.device-information.browser-vendor'),
         value: computed(() => navigator.vendor),
       },
       {
-        label: 'Languages',
+        label: translate('tools.device-information.languages'),
         value: computed(() => navigator.languages.join(', ')),
       },
       {
-        label: 'Platform',
+        label: translate('tools.device-information.platform'),
         value: computed(() => navigator.platform),
       },
       {
-        label: 'User agent',
+        label: translate('tools.device-information.user-agent'),
         value: computed(() => navigator.userAgent),
       },
     ],

@@ -1,7 +1,7 @@
 {
   "name": "it-tools",
-  "version": "2024.5.13-a0bc346",
-  "description": "Collection of handy online tools for developers, with great UX. ",
+  "version": "2024.5.21",
+  "description": "为开发者和IT工作者提供的一系列便利的在线工具集合",
   "keywords": [
     "productivity",
     "converter",
@@ -14,10 +14,10 @@
     "developer-productivity"
   ],
   "author": "Corentin Th <corentin.thomasset74+it-tools@gmail.com> (https://github.com/CorentinTh)",
-  "license": "GNU GPLv3",
+  "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CorentinTh/it-tools"
+    "url": "https://github.com/metacode0602/it-tools"
   },
   "scripts": {
     "dev": "vite",

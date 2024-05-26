@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useHead } from '@vueuse/head';
+import { translate } from '@/plugins/i18n.plugin';
 
-useHead({ title: 'Page not found - IT Tools' });
+useHead({ title: translate('404.notFound.title') });
 </script>
 
 <template>

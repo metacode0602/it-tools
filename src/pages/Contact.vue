@@ -5,5 +5,5 @@ useHead({ title: '关于极客岛' });
 </script>
 
 <template>
-  <c-markdown :markdown="$t('about.content')" mx-auto mt-50px max-w-800px />
+  <c-markdown :markdown="$t('about.content')" mx-auto mt-50px max-w-600px />
 </template>

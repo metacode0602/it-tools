@@ -57,10 +57,10 @@ export default defineConfig({
       registerType: 'autoUpdate',
       strategies: 'generateSW',
       manifest: {
-        name: 'IT Tools',
+        name: '极客岛',
         description: 'Aggregated set of useful tools for developers.',
         display: 'standalone',
-        lang: 'fr-FR',
+        lang: 'zh-CN',
         start_url: `${baseUrl}?utm_source=pwa&utm_medium=pwa`,
         orientation: 'any',
         theme_color: '#18a058',

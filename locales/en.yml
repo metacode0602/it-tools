@@ -5,47 +5,73 @@ home:
     allTools: 'All the tools'
   subtitle: 'Handy tools for developers'
   toggleMenu: 'Toggle menu'
+  command-palette:
+    textPlaceholder: 'Type to search a tool or a command'
   home: Home
-  uiLib: 'UI Lib'
-  support: 'Support IT-Tools development'
+  uiLib: 'AI Libs'
+  opensource: 'Open Source Projects'
+  support: 'Support Geek Island Tool Suite development'
   buyMeACoffee: 'Buy me a coffee'
+  contact: Contact Us
   follow:
-    title: 'You like it-tools?'
+    title: 'You like Geek Island Tool Suite?'
     p1: 'Give us a star on'
-    githubRepository: 'IT-Tools GitHub repository'
+    githubRepository: 'Geek Island Tool Suite GitHub repository'
     p2: 'or follow us on'
-    twitterAccount: 'IT-Tools Twitter account'
+    twitterAccount: 'Geek Island Tool Suite Twitter account'
     thankYou: 'Thank you!'
   nav:
     github: 'GitHub repository'
-    githubRepository: 'IT-Tools GitHub repository'
+    githubRepository: 'Geek Island Tool Suite GitHub repository'
     twitter: 'Twitter account'
-    twitterAccount: 'IT Tools Twitter account'
-    about: 'About  IT-Tools'
+    twitterAccount: 'Geek Island Twitter account'
+    about: 'About Geek Island Tool Suite'
     aboutLabel: 'About'
     darkMode: 'Dark mode'
     lightMode: 'Light mode'
     mode: 'Toggle dark/light mode'
 about:
   content: >
-    # About IT-Tools
+    ## About Geek Island
 
-    This wonderful website, made with ❤ by [Corentin Thomasset](https://github.com/CorentinTh) , aggregates useful tools for developer and people working in IT. If you find it useful, please feel free to share it to people you think may find it useful too and don't forget to bookmark it in your shortcut bar!
+    **"Geek"** is a colloquial term for professionals in the IT industry, and "**Island**" represents a gathering place. **Geek Island** is a platform that provides various useful tools and resources for IT professionals to help them work more efficiently and easily.
+    <p>
+    Geek Island is a hub where cutting-edge technology and innovative spirit converge. We are dedicated to providing technology enthusiasts, developers, and enterprise teams with a one-stop solution that covers AI technology, IT tools, and open-source projects. Here, you will discover a treasure trove of resources carefully selected and maintained by a professional team, aimed at stimulating innovative thinking and accelerating the realization of technology.
+    </p>
 
-    IT Tools is open-source (under the MIT license) and free, and will always be, but it costs me money to host and renew the domain name. If you want to support my work, and encourage me to add more tools, please consider supporting by [sponsoring me](https://www.buymeacoffee.com/cthmsst).
+    ### IT Tools
 
-    ## Technologies
+    <p>
+    Our IT tools library includes a comprehensive set of tools from development to operations, from project management to data analysis, meeting the technical needs at different stages and helping users to enhance work efficiency and optimize technical practices.
+    </p>
 
-    IT Tools is made in Vue.js (Vue 3) with the the Naive UI component library and is hosted and continuously deployed by Vercel. Third-party open-source libraries are used in some tools, you may find the complete list in the [package.json](https://github.com/CorentinTh/it-tools/blob/main/package.json) file of the repository.
 
-    ## Found a bug? A tool is missing?
+    ### AI Technology
 
-    If you need a tool that is currently not present here, and you think can be useful, you are welcome to submit a feature request in the [issues section](https://github.com/CorentinTh/it-tools/issues/new/choose) in the GitHub repository.
+    <p>
+    Geek Island not only keeps up with the latest trends in the field of AI but also provides practical AI tools and frameworks to help users easily implement intelligent projects. Whether it is machine learning, deep learning, or natural language processing, Geek Island can provide strong support.
+    </p>
 
-    And if you found a bug, or something doesn't work as expected, please file a bug report in the [issues section](https://github.com/CorentinTh/it-tools/issues/new/choose) in the GitHub repository.
 
+    ### Open Source Projects
+
+    <p>
+    Geek Island advocates the spirit of open source, sharing and promoting various open-source projects, and encourages community cooperation and knowledge sharing. We believe that open communication can drive the rapid development and innovation of technology.
+    </p>
+
+
+    ### Join Us
+
+    <p>
+    Geek Island is not just a website, but also a community, a platform, and a starting point for innovation. We believe that through Geek Island, every user can find their own treasure trove of technology and together promote the progress and development of the IT industry.
+    <br><br>
+    At the same time, Geek Island is also an open platform, and we welcome anyone passionate about technology to join us. Whether you are a developer, designer, product manager, or technology enthusiast, as long as you are interested in IT tools and open-source projects, you can contact us and participate in various ways.
+    </p>
+
+    Join us and explore the new frontiers of technology together, creating infinite possibilities.
 404:
   notFound: '404 Not Found'
+  title: 'Page is Gone....'
   sorry: 'Sorry, this page does not seem to exist'
   maybe: 'Maybe the cache is doing tricky things, try force-refreshing?'
   backHome: 'Back home'
@@ -271,6 +297,7 @@ tools:
   rsa-key-pair-generator:
     title: RSA key pair generator
     description: Generate a new random RSA private and public pem certificate key pair.
+    rules: 'Bits should be 256 <= bits <= 16384 and be a multiple of 8'
 
   html-wysiwyg-editor:
     title: HTML WYSIWYG editor
@@ -315,7 +342,9 @@ tools:
   hash-text:
     title: Hash text
     description: 'Hash a text string using the function you need : MD5, SHA1, SHA256, SHA224, SHA512, SHA384, SHA3 or RIPEMD160'
-
+    textPlaceholder: 'Your string to hash...'
+    textLabel: 'Your string to hash:'
+    selectLabel: 'Digest encoding:'
   json-to-toml:
     title: JSON to TOML
     description: Parse and convert JSON to TOML.
@@ -323,7 +352,28 @@ tools:
   device-information:
     title: Device information
     description: Get information about your current device (screen size, pixel-ratio, user agent, ...)
-
+    screen-size: Screen size
+    orientation: Orientation
+    orientation-angle: Orientation Angle
+    pixel-ratio: Pixel ratio
+    user-agent: User agent
+    window-size: Window Size
+    screen-width: Screen width
+    screen-height: Screen height
+    viewport-width: Viewport width
+    viewport-height: Viewport height
+    color-depth: Color depth
+    platform: Platform
+    languages: Languages
+    Screen: Screen
+    Device: Device
+    device-pixel-ratio: Device pixel ratio
+    device-width: Device width
+    device-height: Device height
+    device-model: Device model
+    device-type: Device type
+    device-vendor: Device vendor
+    device-version: Device version
   pdf-signature-checker:
     title: PDF signature checker
     description: Verify the signatures of a PDF file. A signed PDF file contains one or more signatures that may be used to determine whether the contents of the file have been altered since the file was signed.
@@ -391,3 +441,15 @@ tools:
   text-to-binary:
     title: Text to ASCII binary
     description: Convert text to its ASCII binary representation and vice-versa.
+
+
+  ascii-art-text-generator:
+    title: ASCII Art Text Generator
+    description: Create ASCII art text with many fonts and styles.
+  ascii-text-drawer:
+    label: 'Your Text:'
+    placeholder: 'Your text to draw'
+
+  outlook-safelink-decoder:
+    title: Outlook safelink decoder
+    description: Decode Outlook SafeLink links.

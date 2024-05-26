@@ -17,11 +17,10 @@ import CollapsibleToolMenu from '@/components/CollapsibleToolMenu.vue';
 
 const themeVars = useThemeVars();
 const styleStore = useStyleStore();
-const version = config.app.version;
-const commitSha = config.app.lastCommitSha.slice(0, 7);
 
 const { tracker } = useTracker();
 const { t } = useI18n();
+const version = config.app.version;
 
 const toolStore = useToolStore();
 const { favoriteTools, toolsByCategory } = storeToRefs(toolStore);
@@ -39,11 +38,11 @@ const tools = computed<ToolCategory[]>(() => [
         <HeroGradient class="gradient" />
         <div class="text-wrapper">
           <div class="title">
-            IT - TOOLS
+            极客岛
           </div>
           <div class="divider" />
           <div class="subtitle">
-            {{ $t('home.subtitle') }}
+            极客汇聚，码动未来
           </div>
         </div>
       </RouterLink>
@@ -58,39 +57,11 @@ const tools = computed<ToolCategory[]>(() => [
         </div>
 
         <CollapsibleToolMenu :tools-by-category="tools" />
-
-        <div class="footer">
-          <div>
-            IT-Tools
-
-            <c-link target="_blank" rel="noopener" :href="`https://github.com/CorentinTh/it-tools/tree/v${version}`">
-              v{{ version }}
-            </c-link>
-
-            <template v-if="commitSha && commitSha.length > 0">
-              -
-              <c-link
-                target="_blank"
-                rel="noopener"
-                type="primary"
-                :href="`https://github.com/CorentinTh/it-tools/tree/${commitSha}`"
-              >
-                {{ commitSha }}
-              </c-link>
-            </template>
-          </div>
-          <div>
-            © {{ new Date().getFullYear() }}
-            <c-link target="_blank" rel="noopener" href="https://github.com/CorentinTh">
-              Corentin Thomasset
-            </c-link>
-          </div>
-        </div>
       </div>
     </template>
 
     <template #content>
-      <div flex items-center justify-center gap-2>
+      <div flex items-center justify-center gap-2 class="header">
         <c-button
           circle
           variant="text"
@@ -107,35 +78,69 @@ const tools = computed<ToolCategory[]>(() => [
         </c-tooltip>
 
         <c-tooltip :tooltip="$t('home.uiLib')" position="bottom">
-          <c-button v-if="config.app.env === 'development'" to="/c-lib" circle variant="text" :aria-label="$t('home.uiLib')">
+          <c-button to="/c-lib" circle variant="text" :aria-label="$t('home.uiLib')" href="https://www.julianshuke.top/ai.html" rel="noopener" target="_blank">
             <icon-mdi:brush-variant text-20px />
           </c-button>
         </c-tooltip>
-
+        <c-tooltip :tooltip="$t('home.opensource')" position="bottom">
+          <c-button
+            circle
+            variant="text"
+            href="https://www.julianshuke.top/open-source.html"
+            rel="noopener"
+            target="_blank"
+            :aria-label="$t('home.opensource')"
+          >
+            <IconMdi:kettleSteamOutline text-20px />
+          </c-button>
+        </c-tooltip>
         <command-palette />
 
-        <locale-selector v-if="!styleStore.isSmallScreen" />
+        <!-- <locale-selector v-if="!styleStore.isSmallScreen" /> -->
 
         <div>
           <NavbarButtons v-if="!styleStore.isSmallScreen" />
         </div>
 
-        <c-tooltip position="bottom" :tooltip="$t('home.support')">
+        <!-- <c-tooltip position="bottom" :tooltip="$t('home.contact')">
           <c-button
             round
-            href="https://www.buymeacoffee.com/cthmsst"
+            to="/about" :aria-label="$t('home.contact')"
             rel="noopener"
-            target="_blank"
             class="support-button"
             :bordered="false"
-            @click="() => tracker.trackEvent({ eventName: 'Support button clicked' })"
+            @click="() => tracker.trackEvent({ eventName: 'contact button clicked' })"
           >
-            {{ $t('home.buyMeACoffee') }}
+            {{ $t('home.contact') }}
             <NIcon v-if="!styleStore.isSmallScreen" :component="Heart" ml-2 />
           </c-button>
-        </c-tooltip>
+        </c-tooltip> -->
       </div>
       <slot />
+      <div class="footer">
+        <div class="">
+          <img src="/favicon-16x16.png" style="vertical-align: middle; padding-bottom:3px">
+          <span class="text-neutral-500">
+            极客岛 {{ version }}
+          </span>
+        </div>
+        <div>
+          <span class="text-neutral-500">
+            © {{ new Date().getFullYear() }} 天津聚链科技有限公司版权所有
+          </span>
+          <c-link target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">
+            <span class="text-neutral-500">津ICP备2023007973号-1</span>
+          </c-link>
+        </div>
+        <div>
+          <img src="@/assets/gongan.png" style="vertical-align:middle;width:16px;padding-bottom: 4px;">
+          <c-link target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=12011402001495">
+            <span span class="text-neutral-500">
+              津公网安备12011402001495号
+            </span>
+          </c-link>
+        </div>
+      </div>
     </template>
   </MenuLayout>
 </template>
@@ -163,13 +168,6 @@ const tools = computed<ToolCategory[]>(() => [
     padding-left: 30px;
     padding-right: 30px;
   }
-}
-
-.footer {
-  text-align: center;
-  color: #838587;
-  margin-top: 20px;
-  padding: 20px 0;
 }
 
 .sider-content {
@@ -214,5 +212,25 @@ const tools = computed<ToolCategory[]>(() => [
       font-size: 16px;
     }
   }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  opacity: 1;
+  background-color: v-bind('themeVars.bodyColor');
+  // background-color: #fff;
+  padding: 15px;
+  z-index: 100;
+}
+
+.footer {
+  // position: sticky;
+  bottom: 0;
+  text-align: center;
+  color: #838587;
+  margin-top: 20px;
+  padding: 10px 0;
+  width: 100%;
 }
 </style>

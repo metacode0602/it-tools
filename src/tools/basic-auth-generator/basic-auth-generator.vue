@@ -11,7 +11,7 @@ const { copy } = useCopy({ source: header, text: 'Header copied to the clipboard
 
 <template>
   <div>
-    <c-input-text v-model:value="username" label="Username" placeholder="Your username..." clearable raw-text mb-5 />
+    <c-input-text v-model:value="username" label="Username" placeholder="Your username..." raw-text clearable mb-5  />
     <c-input-text
       v-model:value="password"
       label="Password"

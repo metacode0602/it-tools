@@ -22,6 +22,7 @@ type Encoding = keyof typeof enc | 'Bin';
 const algoNames = Object.keys(algos) as AlgoNames[];
 const encoding = useQueryParam<Encoding>({ defaultValue: 'Hex', name: 'encoding' });
 const clearText = ref('');
+const { t } = useI18n();
 
 function formatWithEncoding(words: lib.WordArray, encoding: Encoding) {
   if (encoding === 'Bin') {
@@ -37,14 +38,14 @@ const hashText = (algo: AlgoNames, value: string) => formatWithEncoding(algos[al
 <template>
   <div>
     <c-card>
-      <c-input-text v-model:value="clearText" multiline raw-text placeholder="Your string to hash..." rows="3" autosize autofocus label="Your text to hash:" />
+      <c-input-text v-model:value="clearText" :placeholder="t('tools.hash-text.textPlaceholder')" rows="3" raw-text autosize autofocus multiline :label="t('tools.hash-text.textLabel')" />
 
       <n-divider />
 
       <c-select
         v-model:value="encoding"
         mb-4
-        label="Digest encoding"
+        :label="t('tools.hash-text.selectLabel')"
         :options="[
           {
             label: 'Binary (base 2)',

@@ -4,6 +4,7 @@ import TextareaCopyable from '@/components/TextareaCopyable.vue';
 import { withDefaultOnErrorAsync } from '@/utils/defaults';
 import { useValidation } from '@/composable/validation';
 import { computedRefreshableAsync } from '@/composable/computedRefreshable';
+import { translate } from '@/plugins/i18n.plugin';
 
 const bits = ref(2048);
 const emptyCerts = { publicKeyPem: '', privateKeyPem: '' };
@@ -12,7 +13,7 @@ const { attrs: bitsValidationAttrs } = useValidation({
   source: bits,
   rules: [
     {
-      message: 'Bits should be 256 <= bits <= 16384 and be a multiple of 8',
+      message: translate('tools.rsa-key-pair-generator.rules'),
       validator: value => value >= 256 && value <= 16384 && value % 8 === 0,
     },
   ],
