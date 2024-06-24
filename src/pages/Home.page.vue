@@ -8,7 +8,7 @@ import { config } from '@/config';
 
 const toolStore = useToolStore();
 
-useHead({ title: 'IT Tools - Handy online tools for developers' });
+useHead({ title: '极客岛 极客汇聚，码动未来' });
 const { t } = useI18n();
 </script>
 
